@@ -36,21 +36,20 @@ def main():
         total_ganancia += ganancia
         total_perdida += perdida
 
-    promedio_ganancia = total_ganancia/total_ganadas
+    promedio_ganancia = total_ganancia/100
+
     if total_perdidas != 0:
-        promedio_deuda = total_perdida/total_perdidas
+        promedio_deuda = total_perdida/100
     else:
         promedio_deuda = 0
-    promedio_general = (promedio_ganancia + promedio_deuda) / 2
+        
+    promedio_general = (total_ganancia + total_perdida) / 100
 
     print(f"\nTotal de partidas ganadas: {total_ganadas}")
     print(f"\nTotal de partidas perdidas: {total_perdidas}")
-    print(f"\nPromedio de beneficio en las partidas ganadas: {promedio_ganancia}")
-    print(f"\nPromedio de deuda en las partidas perdidas: {promedio_deuda}")
-    print(f"\nPromedio general de las partidas deja un saldo de: {promedio_general}")
-
-
-    
+    print(f"\nPromedio de ganancia: {promedio_ganancia}")
+    print(f"\nPromedio de perdida: {promedio_deuda}")
+    print(f"\nPromedio de saldo general: {promedio_general}")
 
 if __name__ == "__main__":
     main()
