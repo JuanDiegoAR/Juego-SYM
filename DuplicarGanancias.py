@@ -41,7 +41,7 @@ def main():
         promedio_deuda = total_perdida/total_perdidas
     else:
         promedio_deuda = 0
-    promedio_general = (promedio_ganancia + promedio_deuda)
+    promedio_general = (promedio_ganancia + promedio_deuda) / 2
 
     print(f"\nTotal de partidas ganadas: {total_ganadas}")
     print(f"\nTotal de partidas perdidas: {total_perdidas}")
