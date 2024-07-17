@@ -10,7 +10,7 @@ def jugar_partida(apuesta):
     while -100 < saldo < 500:
         dado = random.randint(1, 6)
         if dado % 2 == 0: 
-            saldo += apuesta * 2
+            saldo += apuesta 
             if saldo >= 500:
                 ganadas += 1
                 ganancia = saldo
@@ -29,7 +29,7 @@ def main():
     total_ganancia = 0
     total_perdida = 0
 
-    for _ in range(100):
+    for _ in range(1000):
         ganadas, perdidas, ganancia, perdida = jugar_partida(apuesta)
         total_ganadas += ganadas
         total_perdidas += perdidas
@@ -43,12 +43,16 @@ def main():
     else:
         promedio_deuda = 0
 
+    totalPartidas = total_ganadas + total_perdidas
     promedio_general = (total_ganancia + total_perdida) / 100
 
-    print(f"\nTotal de partidas ganadas: {total_ganadas}")
-    print(f"\nTotal de partidas perdidas: {total_perdidas}")
-    print(f"\nPromedio de ganancia: {promedio_ganancia}")
-    print(f"\nPromedio de perdida: {promedio_deuda}")
+    porcentajePerdidas = (total_perdidas / totalPartidas) * 100
+    porcentajeGanadas = (total_ganadas / totalPartidas) * 100
+
+    print(f"\nTotal de partidas ganadas: {total_ganadas} ({porcentajeGanadas}%)")
+    print(f"\nTotal de partidas perdidas: {total_perdidas} ({porcentajePerdidas}%)")
+    print(f"\nPromedio en las partidas ganadas: {promedio_ganancia}")
+    print(f"\nPromedio en las partidas perdidas: {promedio_deuda}")
     print(f"\nPromedio de saldo general: {promedio_general}")
 
 if __name__ == "__main__":
